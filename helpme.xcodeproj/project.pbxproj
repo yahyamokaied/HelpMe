@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,9 +13,13 @@
 		5343DF572491207600A17BA7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5343DF552491207600A17BA7 /* Main.storyboard */; };
 		5343DF592491207900A17BA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5343DF582491207900A17BA7 /* Assets.xcassets */; };
 		5343DF5C2491207900A17BA7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5343DF5A2491207900A17BA7 /* LaunchScreen.storyboard */; };
+		5343DF642491212C00A17BA7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5343DF632491212C00A17BA7 /* GoogleService-Info.plist */; };
+		66C011CF97814153211D5A7F /* libPods-helpme.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 24ACE2231B15F481E9484625 /* libPods-helpme.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		24ACE2231B15F481E9484625 /* libPods-helpme.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-helpme.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E66C63B7CF2B4E664CBAD3F /* Pods-helpme.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-helpme.release.xcconfig"; path = "Target Support Files/Pods-helpme/Pods-helpme.release.xcconfig"; sourceTree = "<group>"; };
 		5343DF4C2491207600A17BA7 /* helpme.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = helpme.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5343DF4F2491207600A17BA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5343DF512491207600A17BA7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +28,8 @@
 		5343DF582491207900A17BA7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5343DF5B2491207900A17BA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5343DF5D2491207900A17BA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5343DF632491212C00A17BA7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E18DF89E57B105245C94E1B2 /* Pods-helpme.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-helpme.debug.xcconfig"; path = "Target Support Files/Pods-helpme/Pods-helpme.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +37,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66C011CF97814153211D5A7F /* libPods-helpme.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1450E2D90EA2321988D6A9A2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				24ACE2231B15F481E9484625 /* libPods-helpme.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		5343DF432491207600A17BA7 = {
 			isa = PBXGroup;
 			children = (
 				5343DF4E2491207600A17BA7 /* helpme */,
 				5343DF4D2491207600A17BA7 /* Products */,
+				F333D4BA7716114D336D498F /* Pods */,
+				1450E2D90EA2321988D6A9A2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,9 +79,19 @@
 				5343DF552491207600A17BA7 /* Main.storyboard */,
 				5343DF582491207900A17BA7 /* Assets.xcassets */,
 				5343DF5A2491207900A17BA7 /* LaunchScreen.storyboard */,
+				5343DF632491212C00A17BA7 /* GoogleService-Info.plist */,
 				5343DF5D2491207900A17BA7 /* Info.plist */,
 			);
 			path = helpme;
+			sourceTree = "<group>";
+		};
+		F333D4BA7716114D336D498F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E18DF89E57B105245C94E1B2 /* Pods-helpme.debug.xcconfig */,
+				4E66C63B7CF2B4E664CBAD3F /* Pods-helpme.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +101,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5343DF602491207900A17BA7 /* Build configuration list for PBXNativeTarget "helpme" */;
 			buildPhases = (
+				99F136CB4FD24778FBCAED58 /* [CP] Check Pods Manifest.lock */,
 				5343DF482491207600A17BA7 /* Sources */,
 				5343DF492491207600A17BA7 /* Frameworks */,
 				5343DF4A2491207600A17BA7 /* Resources */,
+				360F4E2905985CEC38BEC101 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -126,12 +155,55 @@
 			buildActionMask = 2147483647;
 			files = (
 				5343DF5C2491207900A17BA7 /* LaunchScreen.storyboard in Resources */,
+				5343DF642491212C00A17BA7 /* GoogleService-Info.plist in Resources */,
 				5343DF592491207900A17BA7 /* Assets.xcassets in Resources */,
 				5343DF572491207600A17BA7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		360F4E2905985CEC38BEC101 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-helpme/Pods-helpme-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-helpme/Pods-helpme-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-helpme/Pods-helpme-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		99F136CB4FD24778FBCAED58 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-helpme-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5343DF482491207600A17BA7 /* Sources */ = {
@@ -282,6 +354,7 @@
 		};
 		5343DF612491207900A17BA7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E18DF89E57B105245C94E1B2 /* Pods-helpme.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -291,7 +364,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Yahya.helpme;
+				PRODUCT_BUNDLE_IDENTIFIER = Yahya.helpme.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -300,6 +373,7 @@
 		};
 		5343DF622491207900A17BA7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4E66C63B7CF2B4E664CBAD3F /* Pods-helpme.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -309,7 +383,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Yahya.helpme;
+				PRODUCT_BUNDLE_IDENTIFIER = Yahya.helpme.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

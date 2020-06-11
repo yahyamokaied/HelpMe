@@ -1,0 +1,6 @@
+module Pods_helpme {
+  umbrella header "Pods-helpme-umbrella.h"
+
+  export *
+  module * { export * }
+}
