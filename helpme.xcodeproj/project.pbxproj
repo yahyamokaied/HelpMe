@@ -14,13 +14,16 @@
 		5343DF592491207900A17BA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5343DF582491207900A17BA7 /* Assets.xcassets */; };
 		5343DF5C2491207900A17BA7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5343DF5A2491207900A17BA7 /* LaunchScreen.storyboard */; };
 		5343DF642491212C00A17BA7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5343DF632491212C00A17BA7 /* GoogleService-Info.plist */; };
+		53D27481249A790F00211E3A /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D27480249A790F00211E3A /* FirebaseManager.swift */; };
+		53D27483249A7A2C00211E3A /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D27482249A7A2C00211E3A /* Users.swift */; };
+		53D27485249A7A6C00211E3A /* NewTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D27484249A7A6C00211E3A /* NewTask.swift */; };
 		66C011CF97814153211D5A7F /* libPods-helpme.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 24ACE2231B15F481E9484625 /* libPods-helpme.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		24ACE2231B15F481E9484625 /* libPods-helpme.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-helpme.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E66C63B7CF2B4E664CBAD3F /* Pods-helpme.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-helpme.release.xcconfig"; path = "Target Support Files/Pods-helpme/Pods-helpme.release.xcconfig"; sourceTree = "<group>"; };
-		5343DF4C2491207600A17BA7 /* helpme.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = helpme.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5343DF4C2491207600A17BA7 /* HelpMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelpMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5343DF4F2491207600A17BA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5343DF512491207600A17BA7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		5343DF532491207600A17BA7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,6 +32,9 @@
 		5343DF5B2491207900A17BA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5343DF5D2491207900A17BA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5343DF632491212C00A17BA7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		53D27480249A790F00211E3A /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
+		53D27482249A7A2C00211E3A /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
+		53D27484249A7A6C00211E3A /* NewTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTask.swift; sourceTree = "<group>"; };
 		E18DF89E57B105245C94E1B2 /* Pods-helpme.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-helpme.debug.xcconfig"; path = "Target Support Files/Pods-helpme/Pods-helpme.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -65,7 +71,7 @@
 		5343DF4D2491207600A17BA7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5343DF4C2491207600A17BA7 /* helpme.app */,
+				5343DF4C2491207600A17BA7 /* HelpMe.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -73,16 +79,45 @@
 		5343DF4E2491207600A17BA7 /* helpme */ = {
 			isa = PBXGroup;
 			children = (
-				5343DF4F2491207600A17BA7 /* AppDelegate.swift */,
-				5343DF512491207600A17BA7 /* SceneDelegate.swift */,
-				5343DF532491207600A17BA7 /* ViewController.swift */,
-				5343DF552491207600A17BA7 /* Main.storyboard */,
+				53D2747D249A77F100211E3A /* M */,
+				53D2747E249A77FE00211E3A /* V */,
+				53D2747F249A780D00211E3A /* C */,
 				5343DF582491207900A17BA7 /* Assets.xcassets */,
-				5343DF5A2491207900A17BA7 /* LaunchScreen.storyboard */,
 				5343DF632491212C00A17BA7 /* GoogleService-Info.plist */,
 				5343DF5D2491207900A17BA7 /* Info.plist */,
 			);
 			path = helpme;
+			sourceTree = "<group>";
+		};
+		53D2747D249A77F100211E3A /* M */ = {
+			isa = PBXGroup;
+			children = (
+				5343DF4F2491207600A17BA7 /* AppDelegate.swift */,
+				5343DF512491207600A17BA7 /* SceneDelegate.swift */,
+				53D27480249A790F00211E3A /* FirebaseManager.swift */,
+				53D27482249A7A2C00211E3A /* Users.swift */,
+				53D27484249A7A6C00211E3A /* NewTask.swift */,
+			);
+			path = M;
+			sourceTree = "<group>";
+		};
+		53D2747E249A77FE00211E3A /* V */ = {
+			isa = PBXGroup;
+			children = (
+				5343DF552491207600A17BA7 /* Main.storyboard */,
+				5343DF5A2491207900A17BA7 /* LaunchScreen.storyboard */,
+			);
+			name = V;
+			path = "New Group1";
+			sourceTree = "<group>";
+		};
+		53D2747F249A780D00211E3A /* C */ = {
+			isa = PBXGroup;
+			children = (
+				5343DF532491207600A17BA7 /* ViewController.swift */,
+			);
+			name = C;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		F333D4BA7716114D336D498F /* Pods */ = {
@@ -113,7 +148,7 @@
 			);
 			name = helpme;
 			productName = helpme;
-			productReference = 5343DF4C2491207600A17BA7 /* helpme.app */;
+			productReference = 5343DF4C2491207600A17BA7 /* HelpMe.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -210,8 +245,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53D27481249A790F00211E3A /* FirebaseManager.swift in Sources */,
 				5343DF542491207600A17BA7 /* ViewController.swift in Sources */,
 				5343DF502491207600A17BA7 /* AppDelegate.swift in Sources */,
+				53D27485249A7A6C00211E3A /* NewTask.swift in Sources */,
+				53D27483249A7A2C00211E3A /* Users.swift in Sources */,
 				5343DF522491207600A17BA7 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -365,7 +403,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Yahya.helpme.com;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = HelpMe;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -384,7 +422,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Yahya.helpme.com;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = HelpMe;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
