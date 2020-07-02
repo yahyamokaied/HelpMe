@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		53228B91249F9A4B00A88B7F /* AddLanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53228B90249F9A4B00A88B7F /* AddLanguageViewController.swift */; };
+		532DC72B24AE97C00001BB39 /* AddNewTaskController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532DC72A24AE97C00001BB39 /* AddNewTaskController.swift */; };
 		5343DF502491207600A17BA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5343DF4F2491207600A17BA7 /* AppDelegate.swift */; };
 		5343DF522491207600A17BA7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5343DF512491207600A17BA7 /* SceneDelegate.swift */; };
 		5343DF572491207600A17BA7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5343DF552491207600A17BA7 /* Main.storyboard */; };
@@ -28,6 +29,7 @@
 		24ACE2231B15F481E9484625 /* libPods-helpme.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-helpme.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E66C63B7CF2B4E664CBAD3F /* Pods-helpme.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-helpme.release.xcconfig"; path = "Target Support Files/Pods-helpme/Pods-helpme.release.xcconfig"; sourceTree = "<group>"; };
 		53228B90249F9A4B00A88B7F /* AddLanguageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLanguageViewController.swift; sourceTree = "<group>"; };
+		532DC72A24AE97C00001BB39 /* AddNewTaskController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewTaskController.swift; sourceTree = "<group>"; };
 		5343DF4C2491207600A17BA7 /* HelpMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelpMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5343DF4F2491207600A17BA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5343DF512491207600A17BA7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 				53228B90249F9A4B00A88B7F /* AddLanguageViewController.swift */,
 				537ABF6924AE4F68007C8449 /* AddTaskController.swift */,
 				537ABF6B24AE552D007C8449 /* AddCommentController.swift */,
+				532DC72A24AE97C00001BB39 /* AddNewTaskController.swift */,
 			);
 			name = C;
 			path = ..;
@@ -262,6 +265,7 @@
 				53D27487249A808E00211E3A /* UsersController.swift in Sources */,
 				537ABF6A24AE4F68007C8449 /* AddTaskController.swift in Sources */,
 				5343DF502491207600A17BA7 /* AppDelegate.swift in Sources */,
+				532DC72B24AE97C00001BB39 /* AddNewTaskController.swift in Sources */,
 				53D27485249A7A6C00211E3A /* NewTask.swift in Sources */,
 				53D27483249A7A2C00211E3A /* TaskDetails.swift in Sources */,
 				5343DF522491207600A17BA7 /* SceneDelegate.swift in Sources */,

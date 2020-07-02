@@ -29,12 +29,8 @@ class AddLanguageViewController: UIViewController , UITableViewDataSource,UITabl
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "moveToTask"){
             let secondVC : AddTaskController =  segue.destination as! AddTaskController
-            
             secondVC.languageSeg = self.userLanguage
-
-            
         }
-       
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

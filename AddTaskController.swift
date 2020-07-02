@@ -12,6 +12,7 @@ import FirebaseFirestoreSwift
 
 class AddTaskController: UIViewController, UITableViewDelegate , UITableViewDataSource {
     
+
     
     let db = Firestore.firestore()
     var languageSeg = ""
@@ -20,11 +21,22 @@ class AddTaskController: UIViewController, UITableViewDelegate , UITableViewData
     var selTask : String = ""
     var tempTask : TaskDetails? = nil
     
+    @IBOutlet weak var taskTxt: UILabel!
+    @IBOutlet weak var taskTitle: UITextField!
+    @IBOutlet weak var taskDesc: UITextView!
+    
+    
+    
     @IBOutlet var TasksTV: UITableView!
     var ref: DocumentReference? = nil
     var queryRef : DocumentReference? = nil
-    //var unfilteredData : [TaskDetails] = []
-    //var filteredList : [TaskDetails] = []
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "AddNewTaskSeg"){
+            let thirdVC : AddNewTaskController =  segue.destination as! AddNewTaskController
+            thirdVC.languageSeg = self.languageSeg
+        }
+    }
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -37,7 +49,7 @@ class AddTaskController: UIViewController, UITableViewDelegate , UITableViewData
             if (task.title == selectedTask) {
                 tempTask = task
                 
-                print(tempTask)
+                print(tempTask as Any)
                 
             }
             
@@ -50,20 +62,16 @@ class AddTaskController: UIViewController, UITableViewDelegate , UITableViewData
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "taskCell", for: indexPath)
         cell.textLabel?.text = taskArr[indexPath.row]
-        
         return cell
         
     }
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         let selected = tableView.cellForRow(at: indexPath)!
         let labelTxt = selected.textLabel?.text
         searchTask(selectedTask: labelTxt!)
     }
-    
-    
     
     
 
@@ -73,8 +81,6 @@ class AddTaskController: UIViewController, UITableViewDelegate , UITableViewData
         print("array is here \(taskArr)")
         TasksTV.dataSource = self
         TasksTV.delegate = self
-        
-        // Do any additional setup after loading the view.
     }
     
 
@@ -86,10 +92,7 @@ class AddTaskController: UIViewController, UITableViewDelegate , UITableViewData
                     } else {
                     for document in querySnapshot!.documents {
                         print("Hello iam here ")
-                        
-                        
                         self.convertDatatoObject(d: document)
-                        
                     }
             }
         }
@@ -124,65 +127,5 @@ func convertDatatoObject (d: DocumentSnapshot){
 
 }
     
-    /*
-    let docRef = db.collection(languageSeg).document(d.documentID)
-    //print ("id is " \(d.doc))
-
-               docRef.getDocument { (document, error) in
-                   if let document = document, document.exists {
-                      // let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
-                      // print("Document data: \(dataDescription)")
-                    try document.flatMap {
-                         try $0.data(as: TaskDetails.self)
-                    }
-                    switch result {
-                    case .success(let final):
-                        if let userData = final {
-                            
-                            self.unfilteredData.append(userData)
-                            print(userData)
-                            
-                            self.filterTheList()
-                        } else {
-                            print("Document does not exist")
-                        }
-                    case .failure(let error):
-                        print("Error decoding city: \(error)")
-                    }
-                    
-                    
-                    
-                   } else {
-                       print("Document does not exist")
-                   }
-               }
-    
-
-    
-    let docRef = db.collection(languageSeg).document(d.documentID)
-
-    docRef.getDocument { (document, error) in
-        let result = Result {
-            try document.flatMap {
-                try $0.data(as: TaskDetails.self)
-            }
-        }
-        switch result {
-        case .success(let final):
-            if let userData = final {
-                
-                self.unfilteredData.append(userData)
-                print(userData)
-                
-                self.filterTheList()
-            } else {
-                print("Document does not exist")
-            }
-        case .failure(let error):
-            print("Error decoding city: \(error)")
-        }
-    }
-}
-*/
 
 
