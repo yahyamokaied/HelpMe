@@ -11,4 +11,5 @@ pod 'FirebaseUI'
 use_modular_headers!
 pod 'BoringSSL-GRPC', '= 0.0.3', :modular_headers => false
 pod 'gRPC-Core', '= 1.21.0', :modular_headers => false
+pod 'Firebase/Messaging'
 end

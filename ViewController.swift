@@ -7,93 +7,28 @@
 //
 
 import UIKit
-import Firebase
 
 class ViewController: UIViewController {
 
-    @IBOutlet var quoteLabel: UILabel!
-    @IBOutlet var quoteTextField: UITextField!
-    @IBOutlet var authorTextField: UITextField!
-    
-    var docRef: DocumentReference!
-    var quoteListener: ListenerRegistration!
-
-    @IBAction func saveTapped(_ sender: Any) {
-        guard let quoteText = quoteTextField.text, !quoteText.isEmpty else { return }
-        guard let quoteAuthor = authorTextField.text, !quoteAuthor.isEmpty else { return }
-        let dataToSave: [String: Any] = ["quote":quoteText,"author":quoteAuthor]
-        docRef?.setData(dataToSave){ (error) in
-            if let error = error {
-                print("Got Error \(error.localizedDescription)")
-        }
-            else {
-                print("Data Sent")
-            }
-        }
-    }
-        
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-        handle = Auth.auth().addStateDidChangeListener { (auth, user) in
-
-        }
-        
-        
-        quoteListener = docRef.addSnapshotListener { (docSnapshot, error) in
-            guard let docSnapshot = docSnapshot, docSnapshot.exists else { return }
-            let myData = docSnapshot.data()
-            let latestQuote = myData?["quote"] as? String ?? ""
-            let quoteAuthor = myData?["author"] as? String ?? "(none)"
-            self.quoteLabel.text = "\"\(latestQuote)\" -- \(quoteAuthor)"
-        }
-    }
-    
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-        
-        
-        quoteListener.remove()
-    }
-    
-    
-    
+    @IBOutlet weak var titleLbl: UILabel!
     override func viewDidLoad() {
+        
+        titleLbl.text = ""
+        var charIndex = 0.0
+        let titleTxt = "H E L P   M E"
+        for letter in titleTxt {
+            
+            Timer.scheduledTimer(withTimeInterval: 0.1 * charIndex, repeats: false) { (timer) in
+                
+                self.titleLbl.text?.append(letter)
+                
+            }
+            charIndex += 1
+        }
+        
         super.viewDidLoad()
-        docRef = Firestore.firestore().document("sampleData/inspiration")
-
-    }
-
-
-    
-    @IBAction func loginTapped(_ sender: UIButton) {
-        
-        let authUI = FUIAuth.defaultAuthUI()
-        
-        guard authUI != nil else {
-            return
-        }
-        
-        authUI.delegate = self
-        
-        let authViewController = authUI.authViewController()
-        
-        present(authViewController, animated: true, completion: nil)
         
     }
-    
-}
 
-extension ViewController: FUIAuthDelegate {
-    func authUI(_ authUI: FUIAuth, didDignInWith authDataResult:
-    AuthDataResult?, error: Error?) {
-        if error != nil {
-            return
-        }
-       // authDataResult?.user.uid
-        
-        preform
-    }
+
 }
