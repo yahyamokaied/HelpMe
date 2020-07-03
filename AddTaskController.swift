@@ -120,7 +120,7 @@ func convertDatatoObject (d: DocumentSnapshot){
                 print("Document does not exist")
             }
         case .failure(let error):
-            print("Error decoding city: \(error)")
+            print("Error decoding : \(error)")
         }
     }
     }

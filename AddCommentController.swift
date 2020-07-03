@@ -28,7 +28,7 @@ class AddCommentController: UIViewController {
         let tComment = TaskComment.text
         var ref: DocumentReference? = nil
         ref = db.collection(languageSeg).addDocument(data: [
-            "comments": "Any Help ???"
+            "comments": tComment
         ]) { err in
             if let err = err {
                 print("Error adding document: \(err)")
@@ -40,6 +40,7 @@ class AddCommentController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        AddComment()
 
         // Do any additional setup after loading the view.
     }
