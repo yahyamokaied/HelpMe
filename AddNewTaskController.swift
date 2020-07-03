@@ -28,14 +28,11 @@ class AddNewTaskController: UIViewController {
         print("ggg")
         AddNewTask()
         dismiss(animated:true, completion:nil)
-
     }
     
     func AddNewTask() {
         let tTitle = TaskTitle.text
         let tDesc = TaskDesc.text
-
-        
         var ref: DocumentReference? = nil
         ref = db.collection(languageSeg).addDocument(data: [
             "title": tTitle,

@@ -7,9 +7,37 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseFirestoreSwift
+
 
 class AddCommentController: UIViewController {
-
+    let db = Firestore.firestore()
+    var languageSeg = ""
+    
+    @IBOutlet weak var TaskComment: UITextView!
+    
+    @IBAction func AddCommentBtn(_ sender: UIButton) {
+        AddComment()
+        print("comment added")
+    }
+    
+    
+    
+    func AddComment() {
+        let tComment = TaskComment.text
+        var ref: DocumentReference? = nil
+        ref = db.collection(languageSeg).addDocument(data: [
+            "comments": "Any Help ???"
+        ]) { err in
+            if let err = err {
+                print("Error adding document: \(err)")
+            } else {
+                print("Document added with ID: \(ref!.documentID)")
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
