@@ -25,31 +25,27 @@ class AddNewTaskController: UIViewController {
     
 
     @IBAction func addTaskBtn(_ sender: UIButton) {
-        print("ggg")
         AddNewTask()
         dismiss(animated:true, completion:nil)
     }
     
     func AddNewTask() {
-        let tTitle = TaskTitle.text
-        let tDesc = TaskDesc.text
-        var ref: DocumentReference? = nil
-        ref = db.collection(languageSeg).addDocument(data: [
-            "title": tTitle,
-            "desc": tDesc,
-            "comments": "Any Help ???"
-        ]) { err in
-            if let err = err {
-                print("Error adding document: \(err)")
-            } else {
-                print("Document added with ID: \(ref!.documentID)")
-            }
+
+        let newT : TaskDetails
+           newT =  TaskDetails(title : TaskTitle.text!,
+                               desc: TaskDesc.text,
+                               comments : ["Any help ???"])
+        do {
+            try db.collection(languageSeg).document().setData(from: newT)
+        } catch let error {
+            print("Error writing city to Firestore: \(error)")
         }
+        
+    
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        AddNewTask()
         // Do any additional setup after loading the view.
     }
     

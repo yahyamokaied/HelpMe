@@ -14,9 +14,9 @@ import Foundation
 
 struct TaskDetails : Codable {
     
-    let title : String
-       let desc : String
-       let comments : [String]
+    var title : String
+       var desc : String
+       var comments : [String]
 
     
     

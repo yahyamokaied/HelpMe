@@ -19,7 +19,6 @@
 		537ABF6C24AE552D007C8449 /* AddCommentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537ABF6B24AE552D007C8449 /* AddCommentController.swift */; };
 		53D27481249A790F00211E3A /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D27480249A790F00211E3A /* FirebaseManager.swift */; };
 		53D27483249A7A2C00211E3A /* TaskDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D27482249A7A2C00211E3A /* TaskDetails.swift */; };
-		53D27485249A7A6C00211E3A /* NewTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D27484249A7A6C00211E3A /* NewTask.swift */; };
 		53D27487249A808E00211E3A /* UsersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D27486249A808E00211E3A /* UsersController.swift */; };
 		53D27489249A82FC00211E3A /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D27488249A82FC00211E3A /* ProfileController.swift */; };
 		66C011CF97814153211D5A7F /* libPods-helpme.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 24ACE2231B15F481E9484625 /* libPods-helpme.a */; };
@@ -42,7 +41,6 @@
 		537ABF6B24AE552D007C8449 /* AddCommentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCommentController.swift; sourceTree = "<group>"; };
 		53D27480249A790F00211E3A /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		53D27482249A7A2C00211E3A /* TaskDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetails.swift; sourceTree = "<group>"; };
-		53D27484249A7A6C00211E3A /* NewTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTask.swift; sourceTree = "<group>"; };
 		53D27486249A808E00211E3A /* UsersController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersController.swift; sourceTree = "<group>"; };
 		53D27488249A82FC00211E3A /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 		E18DF89E57B105245C94E1B2 /* Pods-helpme.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-helpme.debug.xcconfig"; path = "Target Support Files/Pods-helpme/Pods-helpme.debug.xcconfig"; sourceTree = "<group>"; };
@@ -106,7 +104,6 @@
 				5343DF512491207600A17BA7 /* SceneDelegate.swift */,
 				53D27480249A790F00211E3A /* FirebaseManager.swift */,
 				53D27482249A7A2C00211E3A /* TaskDetails.swift */,
-				53D27484249A7A6C00211E3A /* NewTask.swift */,
 			);
 			path = M;
 			sourceTree = "<group>";
@@ -266,7 +263,6 @@
 				537ABF6A24AE4F68007C8449 /* AddTaskController.swift in Sources */,
 				5343DF502491207600A17BA7 /* AppDelegate.swift in Sources */,
 				532DC72B24AE97C00001BB39 /* AddNewTaskController.swift in Sources */,
-				53D27485249A7A6C00211E3A /* NewTask.swift in Sources */,
 				53D27483249A7A2C00211E3A /* TaskDetails.swift in Sources */,
 				5343DF522491207600A17BA7 /* SceneDelegate.swift in Sources */,
 				53228B91249F9A4B00A88B7F /* AddLanguageViewController.swift in Sources */,
