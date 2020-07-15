@@ -20,12 +20,19 @@ class AddTaskController: UIViewController, UITableViewDelegate , UITableViewData
     var fetchedData : [TaskDetails] = []
     var tempTask : TaskDetails? = nil
     var tempID :String = ""
+    var temptempID :String = ""
+
     var tempTitle : String = ""
     
     @IBOutlet weak var taskTxt: UILabel!
     @IBOutlet weak var taskTitle: UITextField!
     @IBOutlet weak var taskDesc: UITextView!
     
+    
+    @IBAction func addDocIDD(_ sender: Any) {
+        print(self.tempTask!.title)
+        getDocID(title: self.tempTask!.title);
+    }
     
     
     @IBOutlet var TasksTV: UITableView!
@@ -39,10 +46,13 @@ class AddTaskController: UIViewController, UITableViewDelegate , UITableViewData
         }
         else if (segue.identifier == "AddCommentSeg"){
             let thirdVC : AddCommentController =  segue.destination as! AddCommentController
+            print("DocID before segue: \(self.temptempID)")
+            thirdVC.DocID = self.temptempID
+            print("DocID  after segue: \(self.temptempID)")
             thirdVC.languageSeg = self.languageSeg
             thirdVC.selTask = self.tempTask
-            thirdVC.DocID = self.tempID
-            print("DocID: \(tempID)")
+
+
 
         }
         
@@ -55,8 +65,8 @@ class AddTaskController: UIViewController, UITableViewDelegate , UITableViewData
                          let labelTxt = selected.textLabel?.text
                          tempTitle = labelTxt ?? ""
                          searchTask(selectedTask: tempTitle)
-                         getDocID(title: tempTitle)
-        performSegue(withIdentifier: "AddCommentSeg", sender: self)
+                        getDocID(title: tempTitle)
+                    performSegue(withIdentifier: "AddCommentSeg", sender: self)
 
     }
     
@@ -95,6 +105,7 @@ class AddTaskController: UIViewController, UITableViewDelegate , UITableViewData
         print("array is here \(taskArr)")
         TasksTV.dataSource = self
         TasksTV.delegate = self
+        TasksTV.reloadData()
     }
     
 
@@ -116,18 +127,29 @@ class AddTaskController: UIViewController, UITableViewDelegate , UITableViewData
 
     
     func getDocID (title : String) {
-        
-        db.collection(languageSeg).whereField(title, isEqualTo: title)
+        print("you in getDocID")
+        db.collection(languageSeg).whereField("title", isEqualTo: title)
             .getDocuments() { (querySnapshot, err) in
                 if let err = err {
                     print("Error getting documents: \(err)")
                 } else {
                     for document in querySnapshot!.documents {
                         self.tempID = document.documentID
+                        print("tempID in getDocID : \(self.tempID)")
+                        self.temptempID = self.tempID
+                        print("temptempID in getDocID : \(self.temptempID)")
+
                         print("tempID : \(document.documentID) => \(document.data())")
                     }
                 }
         }
+        
+        
+        
+        
+        
+        
+        
         
     }
     

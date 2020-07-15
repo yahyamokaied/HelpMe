@@ -17,7 +17,8 @@ class AddCommentController: UIViewController, UITableViewDelegate , UITableViewD
     var languageSeg = ""
     var DocID = ""
     var selTask : TaskDetails? = nil
-    
+    var tempID = ""
+
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -42,17 +43,37 @@ class AddCommentController: UIViewController, UITableViewDelegate , UITableViewD
     }
     
     
+    func getDocID (title : String) {
+    print("you in getDocID")
+    db.collection(languageSeg).whereField("title", isEqualTo: title)
+        .getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                for document in querySnapshot!.documents {
+                    self.tempID = document.documentID
+                    print("tempID in getDocID : \(self.tempID)")
+                    self.DocID = self.tempID
+                    print("DocID in getDocID : \(self.DocID)")
+
+                    print("tempID : \(document.documentID) => \(document.data())")
+                }
+            }
+    }
     
+    }
     func AddComment() {
-        let frankDocRef = db.collection(languageSeg).document(DocID)
+        
+        let DocRef = db.collection(languageSeg).document(DocID)
 
         do {
-            try frankDocRef.updateData(["comments": FieldValue.arrayUnion([TaskComment.text])
+            try DocRef.updateData(["comments": FieldValue.arrayUnion([TaskComment.text])
             ])
         } catch let error {
             print("Error writing city to Firestore: \(error)")
         }
-    
+        selTask?.comments.append(TaskComment.text)
+        commentsTV.reloadData()
     }
     
     
@@ -68,8 +89,8 @@ class AddCommentController: UIViewController, UITableViewDelegate , UITableViewD
         
         taskTitle.text = selTask?.title
         taskDesc.text = selTask?.desc
-        
-        print("DocID: \(DocID)")
+        getDocID(title: selTask!.title)
+        print("Doc ID : \(DocID)")
 
     }
     

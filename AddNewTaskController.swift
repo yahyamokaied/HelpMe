@@ -22,6 +22,10 @@ class AddNewTaskController: UIViewController {
     
     
     
+    @IBAction func addDocID(_ sender: Any) {
+        
+    }
+    
     
 
     @IBAction func addTaskBtn(_ sender: UIButton) {
@@ -46,6 +50,7 @@ class AddNewTaskController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view.
     }
     
